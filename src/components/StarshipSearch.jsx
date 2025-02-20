@@ -1,8 +1,32 @@
+import { useState } from 'react';
+function StarshipSearch() {
+    const [formData, setFormData] = useState('')
+    const handleChange = (e) => {
+        setFormData(e.target.value)
 
-function StarshipSearch (){
-    return(
+    }
+
+    const handleSubmit = () => {
+        e.preventDefault()
+        props.handleSearch(formData)
+
+
+    }
+
+    return (
         <>
-        Starship Search
+
+            <form onSubmit={handleSubmit} >
+                <label>Search for straship</label>
+                <input
+                    type="text"
+                    onChange={handleChange}
+
+                />
+                <button type="submit">Search</button>
+            </form>
+
+
         </>
     )
 }

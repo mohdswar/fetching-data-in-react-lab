@@ -7,6 +7,7 @@ function StarshipCard() {
             <p>class: {props.starship.starship_class}</p>
             <p>manufacturer{props.starship.manufacturer}</p>
             <p>model:{props.starship.model}</p>
+            <hr />
         </>
     )
 }

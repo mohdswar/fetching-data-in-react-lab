@@ -20,10 +20,15 @@ const App = () => {
     fetchData();
   }, [])
 
+  const handleSearch = async (formData) => {
+    const data = await starshipsService.search(formData)
+    serStarships(data.results)
+  }
+
   return (
     <>
-      <h1>Hello world!</h1>
-      <StarshipSearch />
+      <h1>starwars api</h1>
+      <StarshipSearch handleSearch={handleSearch} />
       <StarshipList starships={starships} />
     </>
   );
